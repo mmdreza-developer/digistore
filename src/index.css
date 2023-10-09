@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: Vazir-Black;
+    src: url("/public/fonts/Vazir-Black.eot")format("eot"),
+        url("/public/fonts/Vazir-Black.woff")format("woff"),
+        url("/public/fonts/Vazir-Black.woff2")format("woff2");
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: Vazir-Medium;
+    src: url("/public/fonts/Vazir-Medium.eot")format("eot"),
+        url("/public/fonts/Vazir-Medium.woff")format("woff"),
+        url("/public/fonts/Vazir-Medium.woff2")format("woff2");
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: Vazir-Light;
+    src: url("/public/fonts/Vazir-Light.woff")format("eot"),
+        url("/public/fonts/Vazir-Light.woff")format("woff"),
+        url("/public/fonts/Vazir-Light.woff2")format("woff2");
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: Vazir-Regular;
+    src: url("/public/fonts/Vazir-Regular.eot")format("eot"),
+        url("/public/fonts/Vazir-Regular.woff")format("woff"),
+        url("/public/fonts/Vazir-Regular.woff2")format("woff2");
+    font-weight: medium;
+}
+
+* {
+    font-family: Vazir-Medium;
+}
+
+a {
+    @apply hover:text-orange 
+}
+
+body {
+    @apply bg-white
+}
+
+.extra-menu-parent:hover>.extra-submenu {
+    @apply lg:flex
+}
+
+.menu-desktop:hover ul {
+    @apply flex
+}

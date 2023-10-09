@@ -6,20 +6,18 @@ export default {
   ],
   theme: {
     extend: {
+      container: {
+        center: true
+      },
       colors: {
-        "woocommerce": "#7F54B3",
-        "wc-green": "#7ad03a",
-        "wc-red": "#a00",
-        "wc-orange": "#ffba00",
-        "wc-blue": "#2ea2cc",
-        "wc-primary": "#7F54B3",
-        "wc-primary-text": "white",
-        "wc-secondary": "#e9e6ed",
-        "wc-secondary-text": " #515151",
-        "wc-highlight": "#b3af54",
-        "wc-highligh-text": " white",
-        "wc-white": "#fff",
-        "wc-subtext": "#767676",
+        "gray-text": "#c1c1c1",
+        "gray-bg": "#f5f5f5",
+        "gray-500": "#666",
+        "orange": "#fe6000",
+        "white": "#fff",
+        "blue": "#2D416F",
+        "primary": "#6EC1E4",
+        "dark-bg": "#00000085"
       }
     },
   },
