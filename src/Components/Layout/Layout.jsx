@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Topbar from '../HeaderSection/TopBar/Topbar'
 import Navbar from '../HeaderSection/Navbar/Navbar'
 import Menubar from '../HeaderSection/Menubar/Menubar'
+import Footer from '../Footer/Footer'
 
 export default function Layout({ title, children }) {
     useEffect(() => {
@@ -15,7 +16,9 @@ export default function Layout({ title, children }) {
                 <Menubar />
             </header>
             <main>{children}</main>
-            <footer></footer>
+            <footer>
+                <Footer />
+            </footer>
         </>
     )
 }
