@@ -10,19 +10,19 @@ export default function Footer() {
     return (
         <div className='flex flex-col gap-2 bg-white'>
             <div className=' bg-blue flex gap-2 flex-col lg:grid grid-cols-3'>
-                <div className='flex justify-center items-center gap-2 text-xl bg-dark-bg p-6'>
+                <div className='flex justify-center items-center gap-2 text-xl bg-dark-bg p-6' data-aos="fade-right" data-aos-duration="1000">
                     <Link className='text-black p-3 rounded-full bg-white hover:bg-orange hover:text-white transition-all duration-300 transform hover:-translate-y-2'><AiOutlineInstagram /></Link>
                     <Link className='text-black p-3 rounded-full bg-white hover:bg-orange hover:text-white transition-all duration-300 transform hover:-translate-y-2'><AiOutlineTwitter /></Link>
                     <Link className='text-black p-3 rounded-full bg-white hover:bg-orange hover:text-white transition-all duration-300 transform hover:-translate-y-2'><BsFacebook /></Link>
                     <Link className='text-black p-3 rounded-full bg-white hover:bg-orange hover:text-white transition-all duration-300 transform hover:-translate-y-2'><AiFillYoutube /></Link>
                     <Link className='text-black p-3 rounded-full bg-white hover:bg-orange hover:text-white transition-all duration-300 transform hover:-translate-y-2'><AiFillLinkedin /></Link>
                 </div>
-                <div className='text-white flex flex-col justify-center gap-1 items-center lg:items-start'>
+                <div className='text-white flex flex-col justify-center gap-1 items-center lg:items-start' data-aos="fade-up" data-aos-duration="1000">
                     <div className='text-lg'>کمک میخواهید؟ با ما تماس بگیرید</div>
                     <div className='text-sm'>تیم پشتیبانی 24/7 در 021-987654</div>
                 </div>
                 <div className='flex items-center p-2'>
-                    <div className='relative lg:w-[60%] w-full'>
+                    <div className='relative w-full' data-aos="fade-left" data-aos-duration="1000">
                         <input className='w-full p-3 outline-none placeholder:text-sm placeholder:text-gray-500 rounded-3xl' type="text" placeholder='آدرس ایمیل خود را وارد کنید' />
                         <button className='absolute left-0 top-1 rounded-3xl bg-orange text-white px-5 py-2'>عضویت</button>
                     </div>
