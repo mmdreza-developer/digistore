@@ -44,7 +44,10 @@ a {
 }
 
 body {
-    @apply bg-gray-bg
+    @apply bg-gray-bg overflow-x-hidden
+}
+html{
+    overflow-x: hidden;
 }
 
 .extra-menu-parent:hover>.extra-submenu {
@@ -79,10 +82,12 @@ body {
     30% {
         transform: translateX(10px);
     }
-    70%{
+
+    70% {
         transform: translateX(-10px);
     }
-    100%{
+
+    100% {
         transform: translateX(0px);
     }
 }

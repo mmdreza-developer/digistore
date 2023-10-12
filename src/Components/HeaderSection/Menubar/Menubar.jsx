@@ -5,17 +5,16 @@ import { BiCategoryAlt } from "react-icons/bi"
 import { Link } from 'react-router-dom'
 export default function Menubar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [showMenu, setShowMenu] = useState(false)
   const CloseMenu = () => setIsOpen(false)
   const OpenMenu = () => setIsOpen(true)
   return (
     <>
       <div className={`absolute w-full h-full bg-dark-bg transition-all duration-200 ${isOpen ? "z-20 opacity-100" : "-z-10 opacity-0"}`} onClick={CloseMenu}></div>
-      <div x-data="{isShowMenu:true}" className={`${isOpen ? "left-0" : "-left-[350px]"} z-30 transition-all duration-500 menu-mobile flex flex-col gap-4 absolute w-[300px] overflow-y-scroll h-full bg-white shadow-black shadow-lg `}>
+      <div x-data="{isShowMenu:true}" className={`${isOpen ? "w-[300px]" : " w-[0]"} z-30 left-0 transition-all duration-500 flex flex-col gap-4 absolute overflow-y-scroll h-full bg-white shadow-black shadow-lg `}>
         <div className='flex justify-center mt-2'>
           <img src="/images/logo.png" alt="" />
         </div>
-        <div className='cursor-pointer absolute -right-8 top-0 bg-orange p-2 text-white' onClick={CloseMenu} >
+        <div className='cursor-pointer absolute z-50 right-0 top-2 bg-orange p-2 text-white' onClick={CloseMenu} >
           <AiOutlineClose />
         </div>
         <div className='relative p-2'>

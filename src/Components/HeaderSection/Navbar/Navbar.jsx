@@ -21,7 +21,7 @@ export default function Navbar() {
           <div className='absolute r-0 top-0 text-sm bg-orange text-white w-4 h-4 flex justify-center items-center rounded-full'>0</div>
           <MdOutlineLocalGroceryStore />
         </Link>
-        <Link to="" className='flex bg-orange text-white p-1 rounded items-center'><BiUser /></Link>
+        <Link to="" className='flex bg-orange text-white hover:text-white hover:bg-orange p-1 rounded items-center'><BiUser /></Link>
       </div>
     </div>
   )
