@@ -137,7 +137,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className='p-2 mt-4 bg-gray-bg text-gray-500 text-sm'>
-                <div className="container flex items-center justify-between">
+                <div className="container flex items-center flex-col md:flex-row gap-2 justify-between">
                     <div>© تمامی حقوق برای این قالب محفوظ است.</div>
                     <img src="/images/payment.png" alt="" />
                 </div>
