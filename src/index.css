@@ -5,17 +5,17 @@
 
 @font-face {
     font-family: Vazir-Black;
-    src: url("/public/fonts/Vazir-Black.eot")format("eot"),
-        url("/public/fonts/Vazir-Black.woff")format("woff"),
-        url("/public/fonts/Vazir-Black.woff2")format("woff2");
+    src: url("/fonts/Vazir-Black.eot")format("eot"),
+        url("/fonts/Vazir-Black.woff")format("woff"),
+        url("/fonts/Vazir-Black.woff2")format("woff2");
     font-weight: medium;
 }
 
 @font-face {
     font-family: Vazir-Medium;
-    src: url("/public/fonts/Vazir-Medium.eot")format("eot"),
-        url("/public/fonts/Vazir-Medium.woff")format("woff"),
-        url("/public/fonts/Vazir-Medium.woff2")format("woff2");
+    src: url("/fonts/Vazir-Medium.eot")format("eot"),
+        url("/fonts/Vazir-Medium.woff")format("woff"),
+        url("/fonts/Vazir-Medium.woff2")format("woff2");
     font-weight: medium;
 }
 
@@ -23,15 +23,15 @@
     font-family: Vazir-Light;
     src: url("/public/fonts/Vazir-Light.woff")format("eot"),
         url("/public/fonts/Vazir-Light.woff")format("woff"),
-        url("/public/fonts/Vazir-Light.woff2")format("woff2");
+        url("/fonts/Vazir-Light.woff2")format("woff2");
     font-weight: medium;
 }
 
 @font-face {
     font-family: Vazir-Regular;
-    src: url("/public/fonts/Vazir-Regular.eot")format("eot"),
-        url("/public/fonts/Vazir-Regular.woff")format("woff"),
-        url("/public/fonts/Vazir-Regular.woff2")format("woff2");
+    src: url("/fonts/Vazir-Regular.eot")format("eot"),
+        url("/fonts/Vazir-Regular.woff")format("woff"),
+        url("/fonts/Vazir-Regular.woff2")format("woff2");
     font-weight: medium;
 }
 
@@ -40,11 +40,11 @@
 }
 
 a {
-    @apply hover:text-orange 
+    @apply hover:text-orange
 }
 
 body {
-    @apply bg-white
+    @apply bg-gray-bg
 }
 
 .extra-menu-parent:hover>.extra-submenu {
@@ -53,4 +53,36 @@ body {
 
 .menu-desktop:hover ul {
     @apply flex
+}
+
+::-webkit-scrollbar {
+    @apply bg-white w-[15px]
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-blue rounded-full
+}
+
+.btn-slider-next {
+    @apply text-black hover:text-white text-xl hover:bg-orange bg-white rounded-r-full shadow-orange p-5 opacity-60 hover:opacity-100 transition-all duration-200
+}
+
+.btn-slider-prev {
+    @apply text-black hover:text-white text-xl hover:bg-orange bg-white rounded-l-full shadow-orange p-5 opacity-60 hover:opacity-100 transition-all duration-200
+}
+
+.animate-banner:hover {
+    animation: anim-banner 1s ease-in infinite;
+}
+
+@keyframes anim-banner {
+    30% {
+        transform: translateX(10px);
+    }
+    70%{
+        transform: translateX(-10px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
 }

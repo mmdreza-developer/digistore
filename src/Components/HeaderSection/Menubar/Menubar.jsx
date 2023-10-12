@@ -10,8 +10,8 @@ export default function Menubar() {
   const OpenMenu = () => setIsOpen(true)
   return (
     <>
-      <div className={`absolute w-full h-full bg-dark-bg transition-all duration-200 ${isOpen ? "z-10 opacity-100" : "-z-10 opacity-0"}`} onClick={CloseMenu}></div>
-      <div x-data="{isShowMenu:true}" className={`${isOpen ? "left-0" : "-left-[350px]"} transition-all duration-500 menu-mobile flex flex-col gap-4 absolute w-[300px] h-full bg-white shadow-black shadow-lg z-20`}>
+      <div className={`absolute w-full h-full bg-dark-bg transition-all duration-200 ${isOpen ? "z-20 opacity-100" : "-z-10 opacity-0"}`} onClick={CloseMenu}></div>
+      <div x-data="{isShowMenu:true}" className={`${isOpen ? "left-0" : "-left-[350px]"} z-30 transition-all duration-500 menu-mobile flex flex-col gap-4 absolute w-[300px] overflow-y-scroll h-full bg-white shadow-black shadow-lg `}>
         <div className='flex justify-center mt-2'>
           <img src="/images/logo.png" alt="" />
         </div>
@@ -327,7 +327,7 @@ export default function Menubar() {
           </li>
       </ul>
       </div>
-      <div className='bg-blue mt-3'>
+      <div className='bg-blue mt-3 z-10'>
         <div className=' text-white flex justify-between items-center container relative'>
           <div>
             <div className='relative extra-menu-parent'>
@@ -438,7 +438,7 @@ export default function Menubar() {
             <ul className='hidden lg:flex items-center gap-4 w-full flex-1'>
               <li className='group'>
                 <Link to="" className='flex items-center gap-x-1 text-sm'>خانه <AiOutlineDown /></Link>
-                <ul className='hidden flex-col gap-4 group-hover:flex absolute bg-white text-gray-500 p-2 rounded shadow-md text-md'>
+                <ul className='hidden flex-col gap-4 group-hover:flex absolute bg-white text-gray-500 p-2 rounded text-sm shadow-md text-md'>
                   <li>
                     <Link to="" className='py-1 px-3'>صفحه اصلی 1</Link>
                   </li>
