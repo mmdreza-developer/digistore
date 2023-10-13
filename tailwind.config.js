@@ -14,6 +14,7 @@ export default {
         "gray-bg": "#f5f5f5",
         "gray-500": "#666",
         "orange": "#fe6000",
+        "orange-dark": "#cb4d00",
         "white": "#fff",
         "blue": "#2D416F",
         "primary": "#6EC1E4",

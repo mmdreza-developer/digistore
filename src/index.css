@@ -46,7 +46,8 @@ a {
 body {
     @apply bg-gray-bg overflow-x-hidden
 }
-html{
+
+html {
     overflow-x: hidden;
 }
 
@@ -90,4 +91,30 @@ html{
     100% {
         transform: translateX(0px);
     }
+}
+
+.table-cart {
+    @apply w-full text-center
+}
+
+.table-cart tbody tr td {
+    @apply text-gray-500 p-2
+}
+
+.table-cart thead {
+    @apply invisible md:visible hidden md:block
+}
+
+.table-cart thead tr th {
+    @apply p-2 border-none md:border-2
+}
+.table-cart thead tr{
+    @apply flex justify-between
+}
+.table-cart tbody tr {
+    @apply border flex flex-col items-center justify-between md:flex md:justify-between md:flex-row
+}
+
+.table-cart tbody {
+    @apply w-full grid grid-cols-2 gap-2 justify-center md:flex md:flex-col
 }
