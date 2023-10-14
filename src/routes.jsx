@@ -8,7 +8,7 @@ const routes = [
     { path: "/", element: <Index /> },
     { path: "/product/:productId", element: <Product /> },
     { path: "/products", element: <Products /> },
-    { path: "/auth/login", element: <Login /> },
+    { path: "/my-account", element: <Login /> },
     { path: "/cart", element: <Cart /> },
 ]
 export default routes

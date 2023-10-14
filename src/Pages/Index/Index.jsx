@@ -29,7 +29,7 @@ export default function Index() {
       <Layout title="صفحه اصلی">
         <div className="container grid grid-cols-1 md:grid-cols-3 my-8 gap-10 ">
           <section className='md:col-span-2'>
-            <div data-aos="fade-down" data-aos-duration="1000" data-aos-offset="400">
+            <div data-aos="fade-down" data-aos-duration="1000">
               <Swiper className='rounded-2xl relative group mb-4'
                 slidesPerView={1}
                 onSlideChange={() => console.log('slide change')}
