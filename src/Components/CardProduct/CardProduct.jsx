@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 export default function CardProduct({ id, title, img, price, discount }) {
   return (
-    <Link to="/product/product-1" className='flex flex-col items-center gap-4 bg-white rounded-2xl overflow-hidden relative border'>
+    <Link to={`/product/${id}`} className='flex flex-col items-center gap-4 bg-white rounded-2xl overflow-hidden relative border'>
       {discount && <span className='absolute px-4 py-1 rounded bg-orange text-white text-sm top-2 right-2'>حراج</span>}
       <img src={img} alt="" />
       <Link className='text-gray-500' to="/product/product-1">{title}</Link>
