@@ -5,12 +5,25 @@ import { AiOutlineHeart, AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { DiGitCompare } from 'react-icons/di'
 import products from '../../datas/products'
 import { FaUserTie } from 'react-icons/fa6'
+import { addToCart, removeToCart } from '../../Redux/ReduxProduct/Redux'
+import { useDispatch } from 'react-redux'
+import swal from 'sweetalert'
 export default function Product() {
+  const dispatch = useDispatch()
   const [isComment, setIsComment] = useState(false)
   const { productId } = useParams()
   console.log(productId);
   const product = products.AllProducts.find(item => item.id === productId)
   console.log(product);
+  const addToCartHanlder = () => {
+    console.log(product);
+    dispatch(addToCart(product))
+    swal({
+      title: `${product.title} با موفقیت به سبد خرید اضافه شد`,
+      icon: "success",
+      buttons: "بستن"
+    })
+  }
   return (
     <Layout title={` محصول ${product.title}`}>
       <div className='container flex flex-col gap-4 md:flex-row  md:justify-center my-8'>
@@ -35,17 +48,8 @@ export default function Product() {
             <div className='text-3xl text-orange'>{product.discount ? (product.price * ((100 - product.discount) / 100)) : product.price} تومان</div>
 
           </div>
-
-          <div className="flex gap-4 items-center">
-            <div>تعداد:</div>
-            <div className='flex items-center'>
-              <button className='px-4 py-3 rounded border'><AiOutlineMinus /></button>
-              <div className='w-8 flex justify-center items-center text-center p-2 border'>1</div>
-              <button className='px-4 py-3 rounded border'><AiOutlinePlus /></button>
-            </div>
-          </div>
           <div className='flex items-center gap-4'>
-            <button className='px-4 py-2 rounded border bg-black text-white hover:bg-orange'>افزودن به سبد خرید</button>
+            <button className='px-4 py-2 rounded border bg-black text-white hover:bg-orange' onClick={addToCartHanlder}>افزودن به سبد خرید</button>
             <button className='px-4 py-2 rounded border border-black hover:text-white hover:bg-black transition-all'>خرید کنید</button>
           </div>
           <div className='flex items-center gap-4 text-gray-400'>

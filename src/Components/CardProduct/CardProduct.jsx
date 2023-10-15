@@ -2,12 +2,30 @@ import React from 'react'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { SlReload } from 'react-icons/sl'
 import { Link } from 'react-router-dom'
+import { addToCart } from '../../Redux/ReduxProduct/Redux'
+import { useDispatch } from 'react-redux'
 
 export default function CardProduct({ id, title, img, price, discount }) {
+  const dispatch = useDispatch()
+  const addToCartHanlder = () => {
+    const newProduct = {
+      id,
+      title,
+      img,
+      price,
+      discount
+    }
+    dispatch(addToCart(newProduct))
+    swal({
+      title: `${title} با موفقیت به سبد خرید اضافه شد`,
+      icon: "success",
+      buttons: "بستن"
+    })
+  }
   return (
-    <Link to={`/product/${id}`} className='flex flex-col items-center gap-4 bg-white rounded-2xl overflow-hidden relative border'>
+    <div className='flex flex-col items-center gap-4 bg-white rounded-2xl overflow-hidden relative border'>
       {discount && <span className='absolute px-4 py-1 rounded bg-orange text-white text-sm top-2 right-2'>حراج</span>}
-      <img src={img} alt="" />
+      <Link to={`/product/${id}`}><img src={img} alt="" /></Link>
       <Link className='text-gray-500' to="/product/product-1">{title}</Link>
       {/* {discount && <div className='flex gap-1 items-center'><span className='bg-orange text-white text-xs p-1 rounded'>تخفیف :</span> %{discount}</div>} */}
       <div className='flex justify-center items-center gap-4'>
@@ -16,9 +34,9 @@ export default function CardProduct({ id, title, img, price, discount }) {
       </div>
       <div className='flex justify-between items-center gap-4 w-full px-6 py-2'>
         <Link className='text-lg hover:bg-orange hover:text-white transition-all duration-300 p-2 rounded'><AiOutlineHeart /></Link>
-        <Link className='hover:bg-orange hover:text-white text-center p-2 rounded flex-1 text-gray-500 transition-all duration-300 text-xs'>افزودن به سبد خرید</Link>
+        <div className='hover:bg-orange hover:text-white text-center p-2 rounded flex-1 text-gray-500 transition-all duration-300 text-xs cursor-pointer' onClick={addToCartHanlder}>افزودن به سبد خرید</div>
         <Link className='text-lg hover:bg-orange hover:text-white transition-all duration-300 p-2 rounded'><SlReload /></Link>
       </div>
-    </Link>
+    </div>
   )
 }

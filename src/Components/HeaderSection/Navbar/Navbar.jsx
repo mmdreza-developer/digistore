@@ -1,13 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { AiFillCloseCircle, AiFillLock, AiOutlineHeart, AiOutlineUser } from "react-icons/ai"
+import { AiFillCloseCircle, AiFillLock, AiOutlineHeart, AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai"
 import { MdOutlineLocalGroceryStore } from "react-icons/md"
 import { BiUser } from "react-icons/bi"
 import { FiKey } from "react-icons/fi"
 import { BsDot, BsFillPersonVcardFill, BsFillTrash3Fill, BsSearch } from "react-icons/bs"
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrementQuantity, incrementQuantity, removeToCart } from '../../../Redux/ReduxProduct/Redux'
 export default function Navbar() {
+  const productsStore = useSelector(state => state.productStore.cart)
   const [isFormShow, setIsFormShow] = useState(false)
+  const dispatch = useDispatch()
+  const removeCart = (itemId) => {
+    dispatch(removeToCart(itemId))
+  }
+  const IncrementProduct = (itemId) => {
+    dispatch(incrementQuantity(itemId))
+  }
+  const DecrementProduct = (itemId) => {
+    dispatch(decrementQuantity(itemId))
+  }
   return (
     <div className='flex flex-col gap-2 md:flex-row justify-between items-center pt-6 container'>
       <div><img src="/images/logo.png" alt="" /></div>
@@ -21,34 +34,35 @@ export default function Navbar() {
           <AiOutlineHeart className=' text-3xl' />
         </Link>
         <div to="" className='relative group hover:text-orange transition cursor-pointer'>
-          <div className='absolute r-0 top-0 text-sm bg-orange text-white w-4 h-4 flex justify-center items-center rounded-full'>0</div>
+          <div className='absolute r-0 top-0 text-sm bg-orange text-white w-4 h-4 flex justify-center items-center rounded-full'>{productsStore.length}</div>
           <MdOutlineLocalGroceryStore className=' text-3xl' />
           <div className='absolute hidden group-hover:block bg-white text-black rounded-xl shadow-md z-20 w-[350px] -left-[150px] md:-right-[280px]'>
             <div className=' border-b text-gray-700 p-2 text-lg font-bold'>سبد خرید</div>
             <div className='flex flex-col gap-4'>
-              <div className='flex justify-between items-center text-sm p-2 border'>
-                <Link>
-                  <img src="/images/products/1_Blazers.jpg" alt="" className='w-[90px] h-[90px] rounded' />
-                </Link>
-                <div className='flex flex-col gap-3'>
-                  <Link>پیراهن مردانه</Link>
-                  <div>1,200,000 تومان</div>
-                </div>
-                <Link className='text-gray-text text-lg'><BsFillTrash3Fill /></Link>
-              </div>
-              <div className='flex justify-between items-center text-sm p-2 border'>
-                <Link>
-                  <img src="/images/products/1_Sofa_Chair.jpg" alt="" className='w-[90px] h-[90px] rounded' />
-                </Link>
-                <div className='flex flex-col gap-3'>
-                  <Link>مبل راحتی</Link>
-                  <div>3,200,000 تومان</div>
-                </div>
-                <Link className='text-gray-text text-lg'><BsFillTrash3Fill /></Link>
-              </div>
+              {
+                productsStore.length ? (
+                  productsStore.map(item => (
+                    <div className='flex justify-between items-center text-sm p-2 border'>
+                      <Link>
+                        <img src={item.img} alt="" className='w-[90px] h-[90px] rounded' />
+                      </Link>
+                      <div className='flex flex-col gap-3'>
+                        <Link>{item.title}</Link>
+                        <div className='flex flex-col gap-1'>
+                          <s className='text-gray-400 text-xs'>{item.discount ? <div>{item.price * item.quantity} تومان</div> : ""} </s>
+                          <div>{item.discount ? ((((100 - item.discount) / 100) * item.price) * item.quantity) : item.price} تومان  {item.quantity}x</div>
+
+                        </div>
+                      </div>
+                      <Link className='text-gray-text text-lg' onClick={() => removeCart(item.id)}><BsFillTrash3Fill /></Link>
+                    </div>
+                  ))
+                ) :
+                  <h1 className='text-2xl text-red-600 font-bold text-center mt-2 flex items-center gap-1 justify-center'><AiOutlineShoppingCart /> سبد خالی است </h1>
+              }
               <div className='p-4 flex justify-between items-center text-xl'>
                 <div>جمع کل سبد خرید:</div>
-                <div className='text-orange'>4,400,000 تومان</div>
+                <div className='text-orange'>{Number(productsStore.reduce((acc, curr) => acc + curr.price * curr.quantity, 0)).toLocaleString()} تومان</div>
               </div>
               <div className='p-4 flex justify-between items-center'>
                 <Link to="/cart" className='bg-white border border-black rounded px-4 py-2 text-black text-sm hover:bg-orange hover:text-white hover:border-orange transition duration-300'>مشاهده سبد خرید</Link>
