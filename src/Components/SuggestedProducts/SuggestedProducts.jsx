@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 export default function SuggestedProducts() {
     return (
         <div className='container p-8 bg-white rounded shadow-md'>
-            <h1 className="text-3xl text-center">محصولات پیشنهادی</h1>
+            <h1 className="text-3xl text-center my-4">محصولات پیشنهادی</h1>
             <div>
                 <Swiper className='relative'
                     breakpoints={{

@@ -30,8 +30,6 @@ export default function BestSellingProducts() {
                 }}
                 spaceBetween={20}
                 slidesPerView={2}
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >
