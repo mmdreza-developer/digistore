@@ -8,6 +8,7 @@ import { BsDot, BsFillPersonVcardFill, BsFillTrash3Fill, BsSearch } from "react-
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrementQuantity, incrementQuantity, removeToCart } from '../../../Redux/ReduxProduct/Redux'
+import CounterProduct from '../../../hooks/CounterProduct/CounterProduct'
 export default function Navbar() {
   const productsStore = useSelector(state => state.productStore.cart)
   const [isFormShow, setIsFormShow] = useState(false)
@@ -22,7 +23,7 @@ export default function Navbar() {
     dispatch(decrementQuantity(itemId))
   }
   return (
-    <div className='flex flex-col gap-2 md:flex-row justify-between items-center pt-6 container'>
+    <div className='flex flex-col gap-2 md:flex-row justify-between items-center pt-6 px-2 container'>
       <div><img src="/images/logo.png" alt="" /></div>
       <div className=' relative w-full md:w-[50%] mx-6'>
         <input className='border border-orange outline-none rounded-xl text-orange p-3 w-full' type="text" placeholder='جستجو محصول ...' />
@@ -34,7 +35,7 @@ export default function Navbar() {
           <AiOutlineHeart className=' text-3xl' />
         </Link>
         <div to="" className='relative group hover:text-orange transition cursor-pointer'>
-          <div className='absolute r-0 top-0 text-sm bg-orange text-white w-4 h-4 flex justify-center items-center rounded-full'>{productsStore.length}</div>
+          <div className='absolute r-0 top-0 text-sm bg-orange text-white w-4 h-4 flex justify-center items-center rounded-full'>{Number(productsStore.reduce((acc, curr) => acc + curr.quantity, 0)).toLocaleString()}</div>
           <MdOutlineLocalGroceryStore className=' text-3xl' />
           <div className='absolute hidden group-hover:block bg-white text-black rounded-xl shadow-md z-20 w-[350px] -left-[150px] md:-right-[280px]'>
             <div className=' border-b text-gray-700 p-2 text-lg font-bold'>سبد خرید</div>
@@ -52,6 +53,9 @@ export default function Navbar() {
                           <s className='text-gray-400 text-xs'>{item.discount ? <div>{item.price * item.quantity} تومان</div> : ""} </s>
                           <div>{item.discount ? ((((100 - item.discount) / 100) * item.price) * item.quantity) : item.price} تومان  {item.quantity}x</div>
 
+                        </div>
+                        <div>
+                          <CounterProduct quantity={item.quantity} id={item.id} />
                         </div>
                       </div>
                       <Link className='text-gray-text text-lg' onClick={() => removeCart(item.id)}><BsFillTrash3Fill /></Link>
@@ -118,7 +122,7 @@ export default function Navbar() {
                       <li className='flex gap-2 items-center'><BsDot /> مشاهده و پیگیری سفارشات و موارد دیگر</li>
                     </ul>
                     <div className='mt-4 pb-4'>
-                      <Link className='text-white flex items-center  bg-orange hover:text-white px-8 py-4 rounded hover:bg-orange-dark'>ساخت یک حساب کاربری</Link>
+                      <Link className='text-white flex items-center  bg-orange hover:text-white px-8 py-3 justify-center rounded hover:bg-orange-dark'>ساخت یک حساب کاربری</Link>
                     </div>
                   </div>
                 </div>

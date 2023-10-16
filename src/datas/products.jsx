@@ -18,10 +18,12 @@ const products = {
         { id: "کفش-نایک-لایت", title: "کفش نایک لایت", img: "/images/products/3_Sneakers.jpg", price: 3200000, discount: 20 },
         { id: "لباس-راحتی-زنانه", title: "لباس راحتی زنانه", img: "/images/products/4_Jumpsuits.jpg", price: 3200000, discount: 6 },
         { id: "بطری-آب-دوقلو", title: "بطری آب دوقلو", img: "/images/products/4_Kitchens.jpg", price: 174000 },
-        { id: "لامپ-خانگی", title: "لامپ خانگی", img: "/images/products/4_Kitchens.jpg", price: 99000 },
+        { id: "لامپ-خانگی", title: "لامپ خانگی", img: "/images/products/4_Kitchens.jpg", price: 99000, discount: 15 },
         { id: "ساعت-مچی-مردانه-1", title: "ساعت مچی مردانه 1", img: "/images/products/5_Watches.jpg", price: 625000 },
         { id: "کوزه-شیشه-ایی", title: "کوزه شیشه ایی", img: "/images/products/6_Furniture.jpg", price: 255000 },
         { id: "کیف-مسافرتی", title: "کیف مسافرتی", img: "/images/products/6_Handbags.jpg", price: 368000 },
+        { id: "آباژور", title: "آباژور", img: "/images/slides/f17-1-300x300.jpg", price: 1560000, discount: 4 },
+        { id: "لب-تاپ-جدید", title: "لب تاپ جدید", img: "/images/slides/e28-300x300.jpg", price: 1560000, discount: 24 }
     ],
     bestSellingProducts: [
         { id: "شلوار-اسلش", title: "شلوار اسلش", img: "/images/products/f1-300x300.jpg", price: 250000, discount: 7 },
@@ -46,6 +48,11 @@ const products = {
         { id: "ساعت-مچی-مردانه-1", title: "ساعت مچی مردانه 1", img: "/images/products/5_Watches.jpg", price: 625000 },
         { id: "کوزه-شیشه-ایی", title: "کوزه شیشه ایی", img: "/images/products/6_Furniture.jpg", price: 255000 },
         { id: "کیف-مسافرتی", title: "کیف مسافرتی", img: "/images/products/6_Handbags.jpg", price: 368000 },
+    ],
+    SpecialSale: [
+        { id: "آباژور", title: "آباژور", img: "/images/slides/f17-1-300x300.jpg", price: 1560000, discount: 4 },
+        { id: "لامپ-خانگی", title: "لامپ خانگی", img: "/images/products/4_Kitchens.jpg", price: 99000, discount: 15 },
+        { id: "لب-تاپ-جدید", title: "لب تاپ جدید", img: "/images/slides/e28-300x300.jpg", price: 1560000, discount: 24 }
     ]
 
 }

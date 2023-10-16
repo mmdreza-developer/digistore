@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { AiOutlineClose, AiOutlineShoppingCart } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrementQuantity, incrementQuantity, removeToCart } from '../../Redux/ReduxProduct/Redux'
+import CounterProduct from '../../hooks/CounterProduct/CounterProduct'
 export default function Cart() {
   const productsStore = useSelector(state => state.productStore.cart)
   console.log(productsStore);
@@ -43,17 +44,15 @@ export default function Cart() {
                       <Link className='text-orange'>{item.title}</Link>
                     </td>
                     <td>{item.discount ? (((100 - item.discount) / 100) * item.price) : item.price} تومان</td>
-                    <td className='flex items-center justify-center'>
-                      <button className='bg-gray-text px-3 py-1 rounded outline-none text-black' onClick={() => IncrementProduct(item.id)}>+</button>
-                      <div className='w-[50px] border-y-2'>{item.quantity}</div>
-                      <button className='bg-gray-text px-3 py-1 rounded outline-none text-black' onClick={() => DecrementProduct(item.id)}>-</button>
+                    <td className=''>
+                      <CounterProduct id={item.id} quantity={item.quantity} />
                     </td>
                     <td>{item.discount ? (((100 - item.discount) / 100) * item.price) * item.quantity : item.price * item.quantity} تومان</td>
                   </tr>
                 ))
               )}
 
-              
+
             </tbody>
           </table>
           <div>

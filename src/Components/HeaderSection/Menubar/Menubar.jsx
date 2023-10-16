@@ -10,7 +10,7 @@ export default function Menubar() {
   return (
     <>
       <div className={`fixed w-full h-[100%] bg-dark-bg transition-all duration-200 ${isOpen ? "z-20 opacity-100" : "-z-10 opacity-0"}`} onClick={CloseMenu}></div>
-      <div x-data="{isShowMenu:true}" className={`${isOpen ? "w-[300px]" : " w-[0]"} z-30 left-0 transition-all duration-500 flex flex-col gap-4 fixed overflow-y-scroll h-full bg-white shadow-black shadow-lg `}>
+      <div x-data="{isShowMenu:true}" className={`${isOpen ? "w-[300px]" : "w-[0]"} z-30 left-0 transition-all duration-500 flex flex-col gap-4 fixed overflow-y-scroll h-full bg-white shadow-black shadow-lg `}>
         <div className='flex justify-center mt-2'>
           <img src="/images/logo.png" alt="" />
         </div>
