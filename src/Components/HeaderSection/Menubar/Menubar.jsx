@@ -26,25 +26,13 @@ export default function Menubar() {
           <Link className='flex gap-1 items-center text-sm hover:text-orange flex-1 border-y border-r border-gray-text p-2' x-on:click="isShowMenu = true"><AiOutlineMenu/> منو </Link>
         </div>
         <ul x-show="isShowMenu" className='flex flex-col gap-2'>
-          <li x-data="{ isHome: false }">
-            <Link x-on:click="isHome = !isHome" className='flex justify-between p-2 border-b border-gray-text'> خانه <AiOutlineLeft x-bind:class="isHome ? '-rotate-90':''" /></Link>
-            <ul x-show="isHome" className='flex flex-col gap-2 p-2 text-sm text-gray-500'>
-              <li>
-                <Link className='p-2 border-b border-gray-text block'>صفحه اصلی 1</Link>
-              </li>
-              <li>
-                <Link className='p-2 border-b border-gray-text block'>صفحه اصلی 2</Link>
-              </li>
-              <li>
-                <Link className='p-2 border-b border-gray-text block'>صفحه اصلی 3</Link>
-              </li>
-              <li>
-                <Link className='p-2 border-b border-gray-text block'>صفحه اصلی 4</Link>
-              </li>
-              <li>
-                <Link className='p-2 border-b border-gray-text block'>صفحه اصلی 5</Link>
-              </li>
-            </ul>
+          <li>
+            <Link to="/" className='flex justify-between p-2 border-b border-gray-text'> خانه </Link>
+            
+          </li>
+          <li>
+            <Link to="/products" className='flex justify-between p-2 border-b border-gray-text'> همه محصولات </Link>
+            
           </li>
           <li x-data="{isStore:false}">
             <Link x-on:click="isStore = !isStore" className='flex justify-between p-2 border-b border-gray-text'>فروشگاه <AiOutlineLeft x-bind:class="isStore ? '-rotate-90': ''" /></Link>
@@ -435,25 +423,11 @@ export default function Menubar() {
           </div>
           <div>
             <ul className='hidden lg:flex items-center gap-4 w-full flex-1'>
-              <li className='group'>
-                <Link to="" className='flex items-center gap-x-1 text-sm'>خانه <AiOutlineDown /></Link>
-                <ul className='hidden flex-col gap-4 group-hover:flex absolute bg-white text-gray-500 p-2 rounded text-sm shadow-md text-md'>
-                  <li>
-                    <Link to="" className='py-1 px-3'>صفحه اصلی 1</Link>
-                  </li>
-                  <li>
-                    <Link to="" className='py-1 px-3'>صفحه اصلی 2</Link>
-                  </li>
-                  <li>
-                    <Link to="" className='py-1 px-3'>صفحه اصلی 3</Link>
-                  </li>
-                  <li>
-                    <Link to="" className='py-1 px-3'>صفحه اصلی 4</Link>
-                  </li>
-                  <li>
-                    <Link to="" className='py-1 px-3'>صفحه اصلی 5</Link>
-                  </li>
-                </ul>
+              <li className=''>
+                <Link to="/" className='flex items-center gap-x-1 text-sm'>خانه </Link>
+              </li>
+              <li className=''>
+                <Link to="/products" className='flex items-center gap-x-1 text-sm'>همه محصولات </Link>
               </li>
               <li className='group'>
                 <Link to="" className='flex items-center gap-x-1 text-sm'>فروشگاه <AiOutlineDown /></Link>
