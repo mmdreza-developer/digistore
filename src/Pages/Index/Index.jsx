@@ -64,7 +64,7 @@ export default function Index() {
               </div>
               {products.SpecialSale && products.SpecialSale.map(item => (
                 <SwiperSlide className='flex flex-col gap-2 items-center p-2'>
-                  <CardProduct title={item.title} price={item.price} discount={item.discount} img={item.img} />
+                  <CardProduct id={item.id} title={item.title} price={item.price} discount={item.discount} img={item.img} />
                 </SwiperSlide>
               ))}
               <div className='absolute z-10 top-1/3 left-0 transition-all duration-300 opacity-0 group-hover:opacity-100'>

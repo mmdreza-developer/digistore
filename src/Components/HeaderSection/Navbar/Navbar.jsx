@@ -7,7 +7,7 @@ import { FiKey } from "react-icons/fi"
 import { BsDot, BsFillPersonVcardFill, BsFillTrash3Fill, BsSearch } from "react-icons/bs"
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrementQuantity, incrementQuantity, removeToCart } from '../../../Redux/ReduxProduct/Redux'
+import { removeToCart } from '../../../Redux/ReduxProduct/Redux'
 import CounterProduct from '../../../hooks/CounterProduct/CounterProduct'
 export default function Navbar() {
   const productsStore = useSelector(state => state.productStore.cart)
@@ -31,7 +31,7 @@ export default function Navbar() {
         <div to="" className='relative group hover:text-orange transition cursor-pointer'>
           <div className='absolute r-0 top-0 text-sm bg-orange text-white w-4 h-4 flex justify-center items-center rounded-full'>{Number(productsStore.reduce((acc, curr) => acc + curr.quantity, 0)).toLocaleString()}</div>
           <MdOutlineLocalGroceryStore className=' text-3xl' />
-          <div className='absolute hidden group-hover:block bg-white text-black rounded-xl shadow-md z-20 w-[350px] -left-[150px] md:-right-[280px]'>
+          <div className='absolute hidden group-hover:block bg-white text-black rounded-xl shadow-md z-20 w-[350px] -left-[180px] md:-right-[280px]'>
             <div className=' border-b text-gray-700 p-2 text-lg font-bold'>سبد خرید</div>
             <div className='flex flex-col gap-4'>
               {
@@ -60,7 +60,7 @@ export default function Navbar() {
               }
               <div className='p-4 flex justify-between items-center text-xl'>
                 <div>جمع کل سبد خرید:</div>
-                <div className='text-orange'>{Number(productsStore.reduce((acc, curr) => acc + curr.price * curr.quantity, 0)).toLocaleString()} تومان</div>
+                <div className='text-orange'>{Number(productsStore.reduce((acc, curr) => acc + (curr.discount ? (curr.price * ((100 - curr.discount) / 100)) : curr.price) * curr.quantity, 0)).toLocaleString()} تومان</div>
               </div>
               <div className='p-4 flex justify-between items-center'>
                 <Link to="/cart" className='bg-white border border-black rounded px-4 py-2 text-black text-sm hover:bg-orange hover:text-white hover:border-orange transition duration-300'>مشاهده سبد خرید</Link>

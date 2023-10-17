@@ -8,7 +8,7 @@ export default function ScrollerTop() {
     return (
         <div
             onClick={scrollHandler}
-            className='text-white p-3 rounded-full bg-orange flex items-center justify-center transition-all fixed bottom-2 left-2 transform hover:-translate-y-2 text-2xl  hover:bg-orange-dark cursor-pointer'>
+            className="text-white p-3 rounded-full shadow-lg hover:shadow-black bg-orange flex items-center justify-center transition-all fixed bottom-2 left-2 transform hover:-translate-y-2 text-2xl  hover:bg-orange-dark cursor-pointer">
             <BsRocket />
         </div>
     )

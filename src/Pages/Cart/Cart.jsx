@@ -63,12 +63,12 @@ export default function Cart() {
             </div>
             <div className="my-6 flex flex-col gap-2 items-center justify-center">
               <div className='flex items-center gap-8'>
-                <div>جمع جزء</div>
-                <div className='text-sm text-gray-500'>{Number(productsStore.reduce((acc, curr) => acc + curr.price * curr.quantity, 0)).toLocaleString()} تومان</div>
+                <div>مجموع بدون تخفیف</div>
+                <s className='text-sm text-gray-500'>{Number(productsStore.reduce((acc, curr) => acc + curr.price * curr.quantity, 0)).toLocaleString()} تومان</s>
               </div>
               <div className='flex items-center gap-8'>
-                <div>مجموع</div>
-                <div className='text-orange text-xl'>{Number(productsStore.reduce((acc, curr) => acc + curr.price * curr.quantity, 0)).toLocaleString()} تومان</div>
+                <div>مجموع با تخفیف</div>
+                <div className='text-orange text-xl'>{Number(productsStore.reduce((acc, curr) => acc + (curr.discount ? (curr.price * ((100 - curr.discount) / 100)) : curr.price) * curr.quantity, 0)).toLocaleString()} تومان</div>
               </div>
               <div>
                 <button className='px-4 py-2 rounded bg-orange text-white mt-2 text-sm hover:bg-orange-dark transition-all duration-300'>ادامه جهت تصویه حساب</button>
