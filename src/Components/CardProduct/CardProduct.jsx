@@ -23,9 +23,9 @@ export default function CardProduct({ id, title, img, price, discount }) {
     })
   }
   return (
-    <div className='flex flex-col items-center gap-4 bg-white rounded-2xl overflow-hidden relative border'>
-      {discount && <span className='absolute px-4 py-1 rounded bg-orange text-white text-sm top-2 right-2'>حراج</span>}
-      <Link to={`/product/${id}`}><img src={img} alt="" /></Link>
+    <div className='flex flex-col items-center gap-4 bg-white rounded-2xl relative border group overflow-hidden'>
+      {discount && <span className='absolute px-4 py-1 rounded bg-orange text-white text-sm top-2 right-2 group-hover:z-10'>حراج</span>}
+      <Link className='w-full' to={`/product/${id}`}><img className='group-hover:scale-110 transition-all duration-500 w-full' src={img} alt="" /></Link>
       <Link className='text-gray-500' to={`/product/${id}`}>{title}</Link>
       {/* {discount && <div className='flex gap-1 items-center'><span className='bg-orange text-white text-xs p-1 rounded'>تخفیف :</span> %{discount}</div>} */}
       <div className='flex justify-center items-center gap-4'>
