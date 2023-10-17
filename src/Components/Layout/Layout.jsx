@@ -9,6 +9,7 @@ export default function Layout({ title, children }) {
 
     useEffect(() => {
         document.title = title
+        window.scrollTo(0, 0)
     })
     return (
         <>
@@ -21,7 +22,7 @@ export default function Layout({ title, children }) {
             <footer>
                 <Footer />
             </footer>
-             <ScrollerTop /> 
+            <ScrollerTop />
         </>
     )
 }
