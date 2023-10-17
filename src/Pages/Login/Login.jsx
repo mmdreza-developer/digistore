@@ -1,10 +1,15 @@
 import React from 'react'
 import Layout from '../../Components/Layout/Layout'
 import { Link } from 'react-router-dom'
+import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb'
 
 export default function Login() {
   return (
     <Layout title="حساب من">
+      <BreadCrumb Links={[
+        { id: 1, title: "خانه", link: "/" },
+        { id: 2, title: "ورود", link: "/my-account" }
+      ]} />
       <div className="container">
         <h1 className="text-3xl mt-8">حساب من</h1>
         <div className='my-8 flex lg:gap-20 flex-col lg:flex-row gap-4 lg:justify-center'>

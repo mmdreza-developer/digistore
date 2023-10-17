@@ -5,6 +5,7 @@ import { AiOutlineClose, AiOutlineShoppingCart } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrementQuantity, incrementQuantity, removeToCart } from '../../Redux/ReduxProduct/Redux'
 import CounterProduct from '../../hooks/CounterProduct/CounterProduct'
+import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb'
 export default function Cart() {
   const productsStore = useSelector(state => state.productStore.cart)
   console.log(productsStore);
@@ -12,14 +13,12 @@ export default function Cart() {
   const removeCart = (itemId) => {
     dispatch(removeToCart(itemId))
   }
-  const IncrementProduct = (itemId) => {
-    dispatch(incrementQuantity(itemId))
-  }
-  const DecrementProduct = (itemId) => {
-    dispatch(decrementQuantity(itemId))
-  }
   return (
     <Layout title="سبد خرید">
+      <BreadCrumb Links={[
+        { id: 1, title: "خانه", link: "/" },
+        { id: 2, title: "سبد خرید", link: "/cart" }
+      ]} />
       {productsStore.length ? (
         <div className="container my-8 overflow-x-scroll">
           <h1 className="text-3xl">سبدخرید</h1>

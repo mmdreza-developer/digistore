@@ -8,15 +8,13 @@ import { FaUserTie } from 'react-icons/fa6'
 import { addToCart, removeToCart } from '../../Redux/ReduxProduct/Redux'
 import { useDispatch } from 'react-redux'
 import swal from 'sweetalert'
+import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb'
 export default function Product() {
   const dispatch = useDispatch()
   const [isComment, setIsComment] = useState(false)
   const { productId } = useParams()
-  console.log(productId);
   const product = products.AllProducts.find(item => item.id === productId)
-  console.log(product);
   const addToCartHanlder = () => {
-    console.log(product);
     dispatch(addToCart(product))
     swal({
       title: `${product.title} با موفقیت به سبد خرید اضافه شد`,
@@ -26,6 +24,11 @@ export default function Product() {
   }
   return (
     <Layout title={` محصول ${product.title}`}>
+      <BreadCrumb Links={[
+        { id: 1, title: "خانه", link: "/" },
+        { id: 2, title: "محصولات", link: "/products" },
+        { id: 3, title: `${product.title}`, link: `/product/${product.id}` }
+      ]} />
       <div className='container flex flex-col gap-4 md:flex-row  md:justify-center my-8'>
         <div className='flex-1 border rounded border-gray-200'>
           <img src={product.img} className='w-full' alt="" />
