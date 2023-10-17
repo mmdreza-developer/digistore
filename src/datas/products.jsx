@@ -10,7 +10,7 @@ const products = {
         { id: "کفش-پوتین-زنانه", title: "کفش پوتین زنانه", img: "/images/products/f12-300x300.jpg", price: 545000 },
         { id: "کفش-تابستانی-زنانه", title: "کفش تابستانی زنانه", img: "/images/products/f15-300x300.jpg", price: 332000 },
         { id: "کیف-چرم-زنانه", title: "کیف چرم زنانه", img: "/images/products/f16-300x300.jpg", price: 786000 },
-        { id: "کیف-اسپرت-زنانه", title: "کیف اسپرت زنانه", img: "/images/products/f2-300x300.jpg", price: 175000, discount: 4 },
+        { id: "کیف-اسپرت-زنانه", title: "کیف اسپرت زنانه", img: "/images/products/f17-300x300.jpg", price: 175000, discount: 4 },
         { id: "کاپشن-مردانه-1", title: "کاپشن مردانه 1", img: "/images/products/1_Blazers.jpg", price: 990000, discount: 8 },
         { id: "مبل-راحتی-1", title: "مبل راحتی 1", img: "/images/products/1_Sofa_Chair.jpg", price: 3200000, discount: 15 },
         { id: "دکور-خانگی-1", title: "دکور خانگی 1", img: "/images/products/2_Home_Decor.jpg", price: 50000, discount: 15 },
@@ -33,7 +33,7 @@ const products = {
         { id: "کفش-پوتین-زنانه", title: "کفش پوتین زنانه", img: "/images/products/f12-300x300.jpg", price: 545000 },
         { id: "کفش-تابستانی-زنانه", title: "کفش تابستانی زنانه", img: "/images/products/f15-300x300.jpg", price: 332000 },
         { id: "کیف-چرم-زنانه", title: "کیف چرم زنانه", img: "/images/products/f16-300x300.jpg", price: 786000 },
-        { id: "کیف-اسپرت-زنانه", title: "کیف اسپرت زنانه", img: "/images/products/f2-300x300.jpg", price: 175000, discount: 4 }
+        { id: "کیف-اسپرت-زنانه", title: "کیف اسپرت زنانه", img: "/images/products/f17-300x300.jpg", price: 175000, discount: 4 }
     ],
     suggestedProducts: [
         { id: "کیف-اسپرت-زنانه", title: "کیف اسپرت زنانه", img: "/images/products/f2-300x300.jpg", price: 175000, discount: 4 },
