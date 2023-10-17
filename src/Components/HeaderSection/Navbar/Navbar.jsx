@@ -16,12 +16,6 @@ export default function Navbar() {
   const removeCart = (itemId) => {
     dispatch(removeToCart(itemId))
   }
-  const IncrementProduct = (itemId) => {
-    dispatch(incrementQuantity(itemId))
-  }
-  const DecrementProduct = (itemId) => {
-    dispatch(decrementQuantity(itemId))
-  }
   return (
     <div className='flex flex-col gap-2 md:flex-row justify-between items-center pt-6 px-2 container'>
       <div><img src="/images/logo.png" alt="" /></div>

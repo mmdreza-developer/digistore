@@ -37,6 +37,7 @@
 
 * {
     font-family: Vazir-Medium;
+    @apply scroll-smooth
 }
 
 a {
@@ -44,7 +45,7 @@ a {
 }
 
 body {
-    @apply bg-gray-bg overflow-x-hidden
+    @apply bg-gray-bg overflow-x-hidden 
 }
 
 html {

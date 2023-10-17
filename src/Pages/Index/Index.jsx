@@ -9,8 +9,6 @@ import 'swiper/css/scrollbar';
 import SlideNextButton from '../../Components/SlideNextButton/SlideNextButton';
 import SlidePrevButton from '../../Components/SlidePrevButton/SlidePrevButton';
 import { Link } from 'react-router-dom';
-import { SlReload } from "react-icons/sl"
-import { AiOutlineHeart } from 'react-icons/ai';
 import FeaturesBox from '../../Components/FeaturesBox/FeaturesBox';
 import BestSellingProducts from '../../Components/BestSellingProducts/BestSellingProducts';
 import AOS from 'aos';
@@ -60,10 +58,6 @@ export default function Index() {
               // modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={50}
               slidesPerView={1}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
             >
               <div className='absolute z-10 top-1/3 right-0 transition-all duration-300 opacity-0 group-hover:opacity-100'>
                 <SlidePrevButton />
